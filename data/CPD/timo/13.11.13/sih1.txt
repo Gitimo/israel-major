@@ -1,0 +1,8 @@
+Date:	Wed, Nov 13, 2013		
+measured by:	Rotem		
+Si-H, freshly cleaned. Low resistivity, measurement started 6 min after etch.
+24W 34W 42W jump up			
+Time [s]	CPD stream	Light	SPV
+0		-638
+
+spv 32mV
