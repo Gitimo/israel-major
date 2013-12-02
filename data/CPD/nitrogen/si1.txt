@@ -1,0 +1,4 @@
+Date:	Tue, Nov 12, 2013			
+Si-H sample 1, standard procedure, left over two night, sealed.  Very hydrophobic, etched 1 min in HF, very hydrophillic. Inserted into box 4min30s after etch, started measurement 11min after etch, circ. purifier was out:02 at 30ppm				
+Time	CPD	Change	Slope	Comments
+				
