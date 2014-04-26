@@ -1,0 +1,2 @@
+﻿Viscosity set to 1.000cP
+Temperature in the cell 22C

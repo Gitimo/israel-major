@@ -53,13 +53,17 @@ def myannotations():
 	ax1.set_xlabel('Time [min]')
 	ax1.set_ylabel('CPD [mV] (Proble - Sample)')
 	ax1.set_title('CPD of HOPG with the McAllister')
-	ax1.grid(True)
+	ax1.grid(True,which='both')
 	#Plot the legend
 	p1 = plt.Rectangle((0, 0), 1, 1, fc="r")
 	p2 = plt.Rectangle((0, 0), 1, 1, fc="b")
 	p3 = plt.Rectangle((0, 0), 1, 1, fc="k")
 	ax1.legend((p1, p2, p3), ('Ambient','Weak Pump','Turbo Pump',))
+
+
 myannotations()
+
+
 plt.savefig('HOPG-McAllister.pdf', bbox_inches=0)
 
 plt.show()

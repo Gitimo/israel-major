@@ -1,0 +1,32 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab as pyl
+from matplotlib import rc, rcParams
+
+
+rc('text',usetex=True)
+rc('font',**{'family':'serif','serif':['Computer Modern']})
+
+def readCSV (fname, skiplines=0):
+	tmp=np.genfromtxt(fname, skip_header=skiplines, delimiter=',', dtype=None)
+	return tmp
+
+nano = readCSV ('nano1.CSV')
+nano2 = readCSV ('nano2.CSV')
+cyc = readCSV('cyclohexanone1.CSV')
+
+
+fig,ax1 = plt.subplots()
+ax1.plot(nano[0:,0],nano[0:,1],color='r',label='`Nano\'particles 1')
+ax1.hold(True)
+ax1.plot(nano2[0:,0],nano2[0:,1],color='g',label='`Nano\'particles 2')
+#ax1.plot(cyc[0:,0],cyc[0:,1],color='b',label='Cyclohexanone')
+ax1.plot([840,840],[-0.3,0.2],linestyle='--',color='black')
+ax1.plot([1280,1280],[-0.3,0.2],linestyle='--',color='black')
+ax1.plot([1234,1234],[-0.3,0.2],linestyle='--',color='c')
+ax1.axis([830,1350,-0.087,-0.04])
+plt.xlabel('Wavenumbers (cm$^{-1}$)')
+plt.ylabel('Absorbance')
+ax1.legend(loc='best')
+plt.show()
+#plt.savefig('newIRplot.pdf', bbox_inches=0)

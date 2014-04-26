@@ -1,0 +1,57 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab as pyl
+from matplotlib import rc, rcParams
+from matplotlib.ticker import MultipleLocator
+
+axis = ('1-5m$ \Omega$','1-4$ \Omega$','20-60$ \Omega$')
+xpos=np.arange(len(axis))
+width=0.15
+
+low = (4.25 , 4.24 , 4.26)
+errlow = (.03,.03,.07)
+mid = (4.31,4.32,4.29)
+errmid = (.05,.03,.06)
+high = (4.36,4.30,4.33)
+errhigh = (.04,.05,.06)
+
+
+Air = (low[0],mid[0],high[0])
+errAir = (errlow[0],errmid[0],errhigh[0])
+McA = (low[1],mid[1],high[1])
+errMcA = (errlow[1],errmid[1],errhigh[1])
+N2 = (low[2],mid[2],high[2])
+errN2 = (errlow[2],errmid[2],errhigh[2])
+theo = (4.045,4.29,4.37)
+errtheo = (0.025,0.02,0.02)
+
+
+majorLocator   = MultipleLocator(0.1)
+minorLocator   = MultipleLocator(0.05)
+fig, ax = plt.subplots()
+
+plt.bar(xpos-1.5*width,	Air,width=width,yerr=errAir,align='center',alpha=0.8,color='g',ecolor='k')
+plt.bar(xpos,			McA,width=width,yerr=errMcA,align='center',alpha=0.8,color='b',ecolor='k')
+plt.bar(xpos+1.5*width,	N2,width=width,yerr=errN2,align='center',alpha=0.8,color='r',ecolor='k')
+plt.xticks(xpos,axis)
+plt.xlabel('Resistance of the n-Si (100) used')
+plt.ylim((4,4.45))
+plt.ylabel('Workfunction (eV)')
+
+plt.grid(True,axis='y',which='minor',color='0.4',linestyle='-')
+plt.grid(True,axis='y',which='major',color='0.8',linestyle='-')
+plt.errorbar(xpos,theo,yerr=errtheo,fmt='mo',ms=8)
+
+
+p1 = plt.Rectangle((0, 0), 1, 1, fc="g")
+p2 = plt.Rectangle((0, 0), 1, 1, fc="b")
+p3 = plt.Rectangle((0, 0), 1, 1, fc="r")
+p4 = plt.Rectangle((0, 0), 1, 1, fc="m")
+plt.legend((p1, p2, p3, p4), ('Air','McAllister','Glovebox 301','Theory'),loc=4)
+
+ax.yaxis.set_major_locator(majorLocator)
+ax.yaxis.set_minor_locator(minorLocator)
+ax.set_axisbelow(True)
+plt.savefig('SiH2.pdf', bbox_inches=0)
+
+plt.show()

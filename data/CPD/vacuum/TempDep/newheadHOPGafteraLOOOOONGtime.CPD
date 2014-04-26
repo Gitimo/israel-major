@@ -1,0 +1,47 @@
+UserName = Demo User.                                                                       
+Comment1 = turned on pump, stayed at about 0.2mbar, turned on turbo n=1319 off n=2349       
+KPCSVersion =  2
+EVersion =  3
+ADPoints = 1024
+Amplitude = 50
+ComPort = 2
+DADelay = 40
+DAQFreq = 5120.0
+DCOffset = -0.022
+DCOffsetStepSize = 0.003
+DCOffsetMax = 1.000
+DCOffsetMin = -1.000
+DCOffsetParity = -1
+Enabled = 1
+FileSave = 2
+FileNameRoot = KPFM                                                                                                                                                                                                                                                           
+KPFreq = 100.0
+Gain1 = 1
+Gain2 = 1
+Gain3 = 1
+Gain4 = 1
+Interval = 0.1
+LowerBack = -1.000
+MaxGrad = 4.000
+NumAverage = 1
+NumInSeries = 10000
+PeakFit = 3
+PeakFitPoints = 27
+ScanSteps = 1
+ScannerMode = FALSESaturatedCheck = -1
+TriggerDelay = 0
+TrackEnabled = -1
+TrackSetPoint = 0.150
+TrackStepSize = 0.010
+TrackGain = 0.100
+TrackMaxGradDeviation = 0.010
+UpperBack = 1.000
+
+DATA:
+Number	Time (s)	CPD (V)	Error (V)	Gradient 	User1 (V)	User2 (V)	User3 (V)
+===================DO=NOT=MODIFY=THIS=LINE==================
+1	4371.105	0.2361	0.0000	0.1496	0.0000	0.0000	0.0000
+2	4371.714	0.2461	0.0000	0.1502	0.0000	0.0000	0.0000
+3	4372.311	0.2417	0.0000	0.1500	0.0000	0.0000	0.0000
+4	4372.918	0.2371	0.0000	0.1499	0.0000	0.0000	0.0000
+5	4373.532	0.2375	0.0000	0.1500	0.0000	0.0000	0.0000
