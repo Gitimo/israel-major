@@ -6,8 +6,7 @@ from matplotlib.ticker import MultipleLocator
 
 axis = ('Downstairs - old','Downstairs - new','Upstairs')
 
-ISX = ('0.1','0.2','0.3','0.4','0.5','0.6','0.7','0.8','0.9','1.0','1.1','1.2','1.3','1.4','1.5','1.6')
-xpos=np.arange(len(ISX))
+xpos= (11,22,34,43,58,64,70,75,80,84,87,91,94,96,98,100)
 upISI = (512.1,525.5,534,536.7,540,542,543,543.8,544.2,543.5,-100,-111,-111,-111,-111,-111)
 upISIerr = (.02,.11,4,.3,1.4,3,1.6,0.9,0.9,0.6,0,0,0,0,0,0)
 
@@ -23,21 +22,21 @@ minorLocator   = MultipleLocator(0.05)
 width=0.2
 
 fig, ax = plt.subplots()
-plt.bar(xpos-width,	upISI,width=width,yerr=upISIerr,align='center',alpha=0.8,color='0.5',ecolor='k')
-plt.bar(xpos,	downnewISI,width=width,yerr=downnewISIerr,align='center',alpha=0.8,color='b',ecolor='k')
-plt.bar(xpos+width,	downoldISI,width=width,yerr=downoldISIerr,align='center',alpha=0.8,color='r',ecolor='k')
+plt.errorbar(xpos,	upISI,		yerr=upISIerr,xerr=0.5,			fmt='o',alpha=0.8,color='0.5',ecolor='k')
+plt.errorbar(xpos,	downnewISI,	yerr=downnewISIerr,xerr=0.5,	fmt='o',alpha=0.8,color='b',ecolor='k')
+plt.errorbar(xpos,	downoldISI,	yerr=downoldISIerr,xerr=0.5,	fmt='o',alpha=0.8,color='r',ecolor='k')
 
 
 plt.grid(True,axis='y',which='minor',color='0.4',linestyle='-')
 plt.grid(True,axis='y',which='major',color='0.8',linestyle='-')
-
+plt.xlim(0,110)
 plt.ylim(400,550)
 ax.set_ylabel('SPV (mV)')
-ax.set_xlabel('Current through Diode (A)')
+ax.set_xlabel('Percentage of maximum intensity')
 ax.set_title('Surface Photo-Voltage compared')
 #ax.set_xticks(xpos)
 #ax.set_xticklabels( ISX )
-plt.xticks(xpos,ISX)
+#plt.xticks(xpos,ISX)
 
 p1 = plt.Rectangle((0, 0), 1, 1, fc="0.5")
 p2 = plt.Rectangle((0, 0), 1, 1, fc="r")
@@ -49,4 +48,4 @@ plt.legend((p1, p2,p3), ('Upstairs','Downstairs - old','Downstairs - new'),loc=4
 ax.set_axisbelow(True)
 
 #plt.show()
-plt.savefig('SaturationCurrentSeriesNEW.pdf', bbox_inches=0)
+plt.savefig('SaturationIntensitySeries.pdf', bbox_inches=0)

@@ -1,0 +1,79 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{upgreek}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[bottom]{footmisc}
+\usepackage{multirow}
+\usepackage[english]{babel}
+\usepackage{float}
+\usepackage[hang]{caption}
+\usepackage{subfig}
+\usepackage{microtype}
+\usepackage[pdftex]{hyperref}
+\hypersetup{colorlinks=false,pdfborder={0 0 0}}
+\usepackage[a4paper]{geometry}
+
+
+\newcommand{\depth}{9}
+\newcommand{\mktit}{
+	\thispagestyle{empty}
+	\begin{center}
+	%\includegraphics[height=0.2\textheight]{./photos/lattice} \\
+	\hrulefill \\
+	\begin{huge}Temperature dependent Surface Photovoltage \\ \end{huge} 
+	\begin{Large}Finding an illumination setup for the MacAllister  \\ \end{Large} \vspace*{0.8cm}
+
+	\begin{large}Timo Bretten  \\\end{large} \vspace*{1.2cm}	
+	
+	\today \\ \vspace*{0.8cm}
+	\begin{LARGE}For the Cahen group\\\end{LARGE}
+	
+	%\includegraphics[height=0.45\textheight]{./photos/dia}
+	\end{center}
+	\newpage
+	\setcounter{page}{2}
+}
+
+\newcommand{\sih}{Si--H}
+\newcommand{\wfp}{\ensuremath{\upvarphi _{\text{Probe}}}}
+\newcommand{\wfs}{\ensuremath{\upvarphi _{\text{Sample}}}}
+\newcommand{\cpd}{\text{CPD}}
+\newcommand{\McA}{Mc Allister}
+\newcommand{\hopg}{HOPG}
+\newcommand{\kp}{KP}
+\newcommand{\spvt}{SPV(\it{t})}
+\newcommand{\spv}{SPV}
+\newcommand{\ie}{i.e.}
+\newcommand{\litmin}{\emph{l}/min}
+\newcommand{\wf}{WF}
+
+%Centerfloat from Memoire
+\makeatletter
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+
+\begin{document}
+\mktit
+\section{Introduction}
+Over the course of the last months, we have established that we can reliably measure the contact-potential difference, \cpd{}, using the \McA{} in the Lakeshore setup.\\
+The problem lies with measuring the temperature dependent surface photo voltage, \spvt{}. Since the aim is to measure \spv{} at liquid nitrogen and or liquid helium temperatures, the source of illumination for the measurement must not heat the sample. Not only would problems to reach low temperatures arise with the use of a regular light source, but damage to the system might also ensue due to a large temperature gradient between the sample chamber and the radiation shield.\\
+For these reasons, an LED light-source was chosen. \\
+In the follwing, I will describe the experiments already carried out and outline the experiments to be carried out to investigate the \McA{}-\spvt{} setup.
+\section{Experimental Procedure}
+Alumina coated \sih{} was chosen as a sample with a reproducible and large \spv{}.
+\section{Results and Discussion}
+The \wf{} of alumina passivated silicon was found to be 4.41 eV in 618 and 4.37 eV in the \McA{}. \\
+\spv{} was 540 $\pm$ 10 mV in room 618. At room temperature, measured with the same xenon-lamp as in 618, the \spv{} in the \McA{} was 520 $\pm$.\\
+
+\end{document}
